@@ -42,6 +42,7 @@ function scheduleFill (lectures){
                 //console.log(row)
                 for(let j = 2; j < row.length; j++){
                     if(daynumber == j){
+                        let lectureType = element.lectureType === 'PRACTICE' ? 'Практичне заняття' : 'Лекція';
                         let divwrapper = document.createElement("div");
                         divwrapper.className = "flex flex-col rounded-md p-2";
                         let lecturename = document.createElement("span");
@@ -49,7 +50,7 @@ function scheduleFill (lectures){
                         lecturename.innerText = element.subject.name;
                         let groupname = document.createElement("span");
                         groupname.className = "text-semibold text-xs app-color-gray-1";
-                        groupname.innerText = element.group.name;
+                        groupname.innerText = `${element.group.name} - ${lectureType}`;
                         let lectorname = document.createElement("span");
                         lectorname.className = "text-semibold text-xs app-color-black";
                         lectorname.innerText = element.lector.name;

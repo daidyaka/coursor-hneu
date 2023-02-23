@@ -119,7 +119,7 @@ public class QualificationApplication implements CommandLineRunner {
 				.salary(125)
 				.build();
 		Lector lector3 = Lector.builder()
-				.name("Ушакова Ірина Олексіївна")
+				.name("Іваненко Іван Іванович")
 				.address("Харків")
 				.phone("0577021831")
 				.salary(140)
@@ -141,11 +141,23 @@ public class QualificationApplication implements CommandLineRunner {
 		Subject subject4 = Subject.builder()
 				.name("Економіка та право")
 				.build();
+		Subject subject5 = Subject.builder()
+				.name("Розподілені та паралельні обчислення")
+				.build();
+		Subject subject6 = Subject.builder()
+				.name("Основи ІТ бізнеса")
+				.build();
+		Subject subject7 = Subject.builder()
+				.name("Сучасні технології програмування")
+				.build();
 
 		subjectRepository.save(subject1);
 		subjectRepository.save(subject2);
 		subjectRepository.save(subject3);
 		subjectRepository.save(subject4);
+		subjectRepository.save(subject5);
+		subjectRepository.save(subject6);
+		subjectRepository.save(subject7);
 
 		Lecture lecture1 = Lecture.builder()
 				.lector(lector1)
@@ -185,9 +197,58 @@ public class QualificationApplication implements CommandLineRunner {
 		Lecture lecture6 = Lecture.builder()
 				.lector(lector2)
 				.lectureType(LectureType.LECTURE)
-				.group(group2)
+				.group(group1)
 				.subject(subject4)
 				.time(LocalDateTime.of(2023, 2, 23, 13, 55))
+				.build();
+		Lecture lecture7 = Lecture.builder()
+				.lector(lector3)
+				.lectureType(LectureType.PRACTICE)
+				.group(group2)
+				.subject(subject5)
+				.time(LocalDateTime.of(2023, 2, 20, 13, 55))
+				.build();
+		Lecture lecture8 = Lecture.builder()
+				.lector(lector3)
+				.lectureType(LectureType.PRACTICE)
+				.group(group1)
+				.subject(subject5)
+				.time(LocalDateTime.of(2023, 2, 24, 10, 15))
+				.build();
+		Lecture lecture9 = Lecture.builder()
+				.lector(lector3)
+				.lectureType(LectureType.LECTURE)
+				.group(group2)
+				.subject(subject5)
+				.time(LocalDateTime.of(2023, 2, 23, 13, 55))
+				.build();
+		Lecture lecture10 = Lecture.builder()
+				.lector(lector1)
+				.lectureType(LectureType.LECTURE)
+				.group(group1)
+				.subject(subject6)
+				.time(LocalDateTime.of(2023, 2, 20, 10, 15))
+				.build();
+		Lecture lecture11 = Lecture.builder()
+				.lector(lector3)
+				.lectureType(LectureType.LECTURE)
+				.group(group1)
+				.subject(subject6)
+				.time(LocalDateTime.of(2023, 2, 21, 10, 15))
+				.build();
+		Lecture lecture12 = Lecture.builder()
+				.lector(lector2)
+				.lectureType(LectureType.LECTURE)
+				.group(group1)
+				.subject(subject7)
+				.time(LocalDateTime.of(2023, 2, 24, 12, 10))
+				.build();
+		Lecture lecture13 = Lecture.builder()
+				.lector(lector2)
+				.lectureType(LectureType.PRACTICE)
+				.group(group2)
+				.subject(subject7)
+				.time(LocalDateTime.of(2023, 2, 23, 12, 10))
 				.build();
 
 		lectureRepository.save(lecture1);
@@ -196,5 +257,12 @@ public class QualificationApplication implements CommandLineRunner {
 		lectureRepository.save(lecture4);
 		lectureRepository.save(lecture5);
 		lectureRepository.save(lecture6);
+		lectureRepository.save(lecture7);
+		lectureRepository.save(lecture8);
+		lectureRepository.save(lecture9);
+		lectureRepository.save(lecture10);
+		lectureRepository.save(lecture11);
+		lectureRepository.save(lecture12);
+		lectureRepository.save(lecture13);
 	}
 }

@@ -22,7 +22,7 @@ public class Subject {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int subjectId;
 
-    @Column(length = 30)
+    @Column(length = 60)
     private String name;
 
 }
