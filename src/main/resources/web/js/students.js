@@ -1,14 +1,14 @@
 const urlParams = new URLSearchParams(window.location.search);
 
-fetch(`http://localhost:8080/lectures/group/${urlParams.get('groupId')}`)
+fetch(`https://qualification-app-hneu.herokuapp.com/lectures/group/${urlParams.get('groupId')}`)
     .then(res => res.json())
     .then(x => scheduleFill(x));
 
-fetch(`http://localhost:8080/group/${urlParams.get('groupId')}`)
+fetch(`https://qualification-app-hneu.herokuapp.com/group/${urlParams.get('groupId')}`)
     .then(res => res.json())
     .then(x => document.getElementById('groupName').innerText = x.name);
 
-fetch(`http://localhost:8080/student/${urlParams.get('studentId')}`)
+fetch(`https://qualification-app-hneu.herokuapp.com/student/${urlParams.get('studentId')}`)
     .then(res => res.json())
     .then(x => document.getElementById('studentName').innerText = x.name);
 

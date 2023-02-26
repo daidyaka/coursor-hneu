@@ -9,7 +9,7 @@ function createCustomTd() {
 document.getElementById('date').innerText = new Date().toLocaleDateString("ua-UA")
 
 function getLectureData(lectorId) {
-    return fetch("http://localhost:8080/lectures/lector/" + lectorId.toString())
+    return fetch("https://qualification-app-hneu.herokuapp.com/lectures/lector/" + lectorId.toString())
         .then(result => result.json());
 }
 
@@ -55,4 +55,4 @@ function tableFill(lectors) {
     );
 }
 
-fetch('http://localhost:8080/lectors').then(result => result.json()).then(result => tableFill(result))
+fetch('https://qualification-app-hneu.herokuapp.com/lectors').then(result => result.json()).then(result => tableFill(result))

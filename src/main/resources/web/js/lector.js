@@ -1,10 +1,10 @@
 const urlParams = new URLSearchParams(window.location.search);
 
-fetch(`http://localhost:8080/lectures/lector/${urlParams.get('lectorId')}`)
+fetch(`https://qualification-app-hneu.herokuapp.com/lectures/lector/${urlParams.get('lectorId')}`)
     .then(res => res.json())
     .then(x => scheduleFill(x));
 
-fetch(`http://localhost:8080/lector/${urlParams.get('lectorId')}`)
+fetch(`https://qualification-app-hneu.herokuapp.com/lector/${urlParams.get('lectorId')}`)
     .then(res => res.json())
     .then(x => {
         document.getElementById('lectorName').innerText = x.name;

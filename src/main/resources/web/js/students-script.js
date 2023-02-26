@@ -49,6 +49,6 @@ function addFaculties(facultiesData){
     })
 }
 
-fetch('http://localhost:8080/faculties').then(result => result.json()).then(result => addFaculties(result));
-fetch('http://localhost:8080/groups').then(result => result.json()).then(result => addGroups(result));
-fetch('http://localhost:8080/students').then(result => result.json()).then(result => addStudents(result));
+fetch('https://qualification-app-hneu.herokuapp.com/faculties').then(result => result.json()).then(result => addFaculties(result));
+fetch('https://qualification-app-hneu.herokuapp.com/groups').then(result => result.json()).then(result => addGroups(result));
+fetch('https://qualification-app-hneu.herokuapp.com/students').then(result => result.json()).then(result => addStudents(result));

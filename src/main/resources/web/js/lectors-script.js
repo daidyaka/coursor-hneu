@@ -14,7 +14,7 @@ function addLectors(lectorsData){
 }
 
 
-fetch('http://localhost:8080/lectors').then(result => result.json()).then(result => addLectors(result));
+fetch('https://qualification-app-hneu.herokuapp.com/lectors').then(result => result.json()).then(result => addLectors(result));
 lectorsSelect.onchange = () => {
     let lectorId = lectorsSelect.options[lectorsSelect.selectedIndex].value;
     location.href = `lector.html?lectorId=${lectorId}`
